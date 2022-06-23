@@ -36,7 +36,7 @@ def start_decode(input_erc: str) -> str:
         reverse_second_part = get_reverse(x=sp_int)
 
         xor = fp_int ^ reverse_second_part
-        ret = (xor - 0xE010A11)
+        ret = (xor - 0xE010A11) + 2**32
 
         # Formats the return as hex
         xd = hex(ret)
