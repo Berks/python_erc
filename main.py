@@ -16,8 +16,8 @@ def get_reverse(x) -> int:
 
 def get_full_binary(string: str, count: int) -> str:
     str2 = string
-    while len(string) < count:
-        str2 = "0" + string
+    while len(str2) < count:
+        str2 = "0" + str2
     return str2
 
 
@@ -36,7 +36,7 @@ def start_decode(input_erc: str) -> str:
         reverse_second_part = get_reverse(x=sp_int)
 
         xor = fp_int ^ reverse_second_part
-        ret = (xor - 0xE010A11) + 2**32
+        ret = (xor - 0xE010A11) % (2**32)
 
         # Formats the return as hex
         xd = hex(ret)
